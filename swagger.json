@@ -1,0 +1,202 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "FMT",
+        "description": "Find My Tutor API Document"
+    },
+    "host": "127.0.0.1:4000",
+    "basePath": "",
+    "tags": [
+        {
+            "name": "FMT",
+            "description": "API for FMT system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Welcome",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/getAllCourse": {
+            "get": {
+                "summary": "Get All Course",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/getCourseById": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "courseid",
+                        "in": "query"
+                    }
+                ],
+                "summary": "Get Course By Course ID",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/getCourseByTutorId": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "tutorid",
+                        "in": "query"
+                    }
+                ],
+                "summary": "Get Course By Tutor ID",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/tutorRequest": {
+            "get": {
+                "summary": "Get All Tutor Request",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/studentRegister": {
+            "get": {
+                "summary": "Get All Student Register",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/studentInfo": {
+            "get": {
+                "summary": "Get All Student Information",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/tutorInfo": {
+            "get": {
+                "summary": "Get All Tutor Information",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/getStudentInfoById": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "studentid",
+                        "in": "query"
+                    }
+                ],
+                "summary": "Get Student Information By ID",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/getTutorInfoById": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "tutorid",
+                        "in": "query"
+                    }
+                ],
+                "summary": "Get Tutor Information By ID",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/addCourse": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "courseid",
+                        "in": "query"
+                    },
+                    {
+                        "name": "address",
+                        "in": "query"
+                    },
+                    {
+                        "name": "subject",
+                        "in": "query"
+                    },
+                    {
+                        "name": "price",
+                        "in": "query"
+                    },
+                    {
+                        "name": "time",
+                        "in": "query"
+                    },
+                    {
+                        "name": "coursename",
+                        "in": "query"
+                    }
+                ],
+                "summary": "Add New Course (Don't Try Any Weird CourseID, Please Use 123456789007 and Price should be Integer range 0 - 1000, Because Database may collapse in a blink of eye . . .)",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    }
+}
